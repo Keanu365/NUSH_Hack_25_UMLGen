@@ -26,24 +26,34 @@
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label fx:id="backBtn" onMouseClicked="#menu" text=" &lt; BACK   " textFill="#89ffe7">
+            <Label fx:id="backBtn" minWidth="-Infinity" onMouseClicked="#menu" prefHeight="48.0" prefWidth="150.0" text=" &lt; BACK   " textFill="#89ffe7">
                <font>
                   <Font size="29.0" />
                </font>
                <HBox.margin>
-                  <Insets right="275.0" />
+                  <Insets right="265.0" />
                </HBox.margin>
             </Label>
-            <ImageView fitHeight="45.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@logo.png" />
-               </image>
-            </ImageView>
-            <Label prefHeight="49.0" prefWidth="119.0" stylesheets="@HeaderFont.css" text="ClassBuddy" textFill="#aacbc4">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Label>
+            <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="1000.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label minWidth="-Infinity" prefHeight="48.0" prefWidth="125.0" stylesheets="@HeaderFont.css" text="ClassBuddy" textFill="#aacbc4">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
          </children>
          <GridPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
