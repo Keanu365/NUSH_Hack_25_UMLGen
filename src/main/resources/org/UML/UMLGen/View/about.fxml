@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" spacing="30.0" styleClass="bg" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.UML.UMLGen.Controller.AboutController">
+    <children>
+      <Label text="About the Programmer" textFill="WHITE" underline="true">
+         <font>
+            <Font name="Ink Free" size="48.0" />
+         </font>
+      </Label>
+        <ImageView fitHeight="237.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Keanu.jpg" />
+            </image>
+        </ImageView>
+        <Label text="Thet Paing Min" textFill="WHITE">
+            <font>
+                <Font name="Trebuchet MS" size="36.0" />
+            </font>
+        </Label>
+      <Label text="M25303" textFill="WHITE">
+         <VBox.margin>
+            <Insets top="-20.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Trebuchet MS" size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#handleClose" prefWidth="150.0" style="-fx-background-color: #83f28f;" text="Close">
+         <font>
+            <Font name="Trebuchet MS" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+    </children>
+</VBox>

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Monomaniac One";
+    src: url('MonomaniacOne-Regular.ttf');
+}
+
+.label {
+    -fx-font-family: "Monomaniac One";
+}
+
+.button {
+    -fx-font-family: "Monomaniac One";
+}

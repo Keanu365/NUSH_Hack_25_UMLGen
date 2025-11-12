@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bg" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.UML.UMLGen.Controller.UMLTutController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" percentHeight="45.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label id="back_btn" fx:id="exitBtn" onMouseClicked="#exit" styleClass="label2" text="Exit">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.24705882370471954" green="1.0" blue="0.8509804010391235" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.15294118225574493" green="0.8901960849761963" blue="0.7607843279838562" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label id="app_name" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" styleClass="label1" text="ClassMate" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <effect>
+                  <Bloom />
+               </effect>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets top="5.0" />
+         </GridPane.margin>
+      </HBox>
+      <Label alignment="CENTER" contentDisplay="CENTER" styleClass="label2" text="What do I upload?" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+         <font>
+            <Font name="Ink Free" size="28.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label fx:id="descLbl" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" styleClass="label1" text="Lorem ipsum dolor sit amet" textAlignment="CENTER" wrapText="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <font>
+            <Font name="Ink Free" size="18.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="20.0" right="20.0" top="10.0" />
+         </GridPane.margin>
+      </Label>
+      <ImageView fx:id="gifView" fitHeight="360.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@icon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="prevBtn" onKeyPressed="#previous" onMouseClicked="#previous" styleClass="label2" text="&lt;" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+         <font>
+            <Font name="Ink Free" size="36.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="15.0" />
+         </GridPane.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="nextBtn" layoutX="25.0" layoutY="195.0" onKeyPressed="#next" onMouseClicked="#next" styleClass="label2" text="&gt;" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+         <font>
+            <Font name="Ink Free" size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <GridPane.margin>
+            <Insets right="15.0" />
+         </GridPane.margin>
+      </Label>
+   </children>
+</GridPane>

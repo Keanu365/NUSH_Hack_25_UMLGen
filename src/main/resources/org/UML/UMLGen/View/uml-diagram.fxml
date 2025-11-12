@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="1280.0" style="-fx-background-color: #032221;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.UML.UMLGen.Controller.UMLEditorController">
+   <right>
+      <VBox fx:id="stackPane" prefHeight="400.0" prefWidth="270.0" spacing="15.0" style="-fx-background-color: #021B1A;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="umlBoxLbl" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #aacbc4;" stylesheets="@HeaderFont.css" text="Add UML Box" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="arrowLbl" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#drawArrow" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: #aacbc4;" stylesheets="@HeaderFont.css" text="Add Arrow">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Label>
+            <ToggleButton fx:id="selectToggle" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#modeToggle" prefHeight="42.0" prefWidth="92.0" styleClass="button" stylesheets="@HeaderFont.css" text="Select (1)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="2.0" />
+               </VBox.margin>
+            </ToggleButton>
+            <ToggleButton fx:id="moveToggle" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#modeToggle" prefHeight="42.0" prefWidth="92.0" styleClass="button" stylesheets="@HeaderFont.css" text="Move (2)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </ToggleButton>
+            <ToggleButton fx:id="panToggle" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#modeToggle" prefHeight="42.0" prefWidth="92.0" styleClass="button" stylesheets="@HeaderFont.css" text="Pan (3)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </ToggleButton>
+            <ToggleButton fx:id="editTextToggle" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#modeToggle" prefHeight="42.0" prefWidth="92.0" styleClass="button" stylesheets="@HeaderFont.css" text="Edit (4)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </ToggleButton>
+            <ToggleButton fx:id="resizeToggle" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#modeToggle" prefHeight="42.0" prefWidth="92.0" styleClass="button" stylesheets="@HeaderFont.css" text="Resize (5)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </ToggleButton>
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="270.0" spacing="15.0" style="-fx-background-color: #021B1A;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="71.0" prefWidth="270.0">
+               <children>
+                  <ImageView fitHeight="45.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="49.0" prefWidth="119.0" stylesheets="@HeaderFont.css" text="UML" textFill="#aacbc4">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="delBtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="121.0" style="-fx-border-color: #d1544b; -fx-border-width: 3;" stylesheets="@HeaderFont.css" text="DEL">
+                     <HBox.margin>
+                        <Insets left="85.0" right="15.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="15.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <Button fx:id="saveBtn" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="30.0" layoutY="189.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#save" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: aacbc4;" stylesheets="@HeaderFont.css" text="Save as...">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Button>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="270.0" spacing="10.0">
+               <children>
+                  <Button fx:id="bold" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text="B">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="italic" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text="I">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Italic" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="underline" mnemonicParsing="false" prefHeight="42.0" prefWidth="42.0" text="U" underline="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="clr" mnemonicParsing="false" prefHeight="42.0" prefWidth="85.0" stylesheets="@HeaderFont.css" text="CLEAR">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="propertiesLbl" alignment="CENTER" layoutX="30.0" layoutY="464.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: aacbc4;" styleClass="label" stylesheets="@HeaderFont.css" text="Properties...">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Label>
+            <VBox fx:id="propBox1">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="270.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="146.0" stylesheets="@HeaderFont.css" text="Border Color:" textFill="#aacbc4">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ColorPicker fx:id="borderColorPicker" prefHeight="30.0" prefWidth="42.0">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </ColorPicker>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="270.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="144.0" stylesheets="@HeaderFont.css" text="Stroke Width:" textFill="#aacbc4">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="borderWidthField" prefHeight="30.0" prefWidth="30.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="30.0" layoutY="20.0" prefHeight="40.0" prefWidth="24.0" stylesheets="@HeaderFont.css" text="px" textFill="#aacbc4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="propBox2">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="270.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="146.0" stylesheets="@HeaderFont.css" text="Font Color:" textFill="#aacbc4">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ColorPicker fx:id="fontColorPicker" prefHeight="30.0" prefWidth="42.0">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </ColorPicker>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="270.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="40.0" prefWidth="144.0" stylesheets="@HeaderFont.css" text="Font Size:" textFill="#aacbc4">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="fontSizeField" prefHeight="30.0" prefWidth="30.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="30.0" layoutY="20.0" prefHeight="40.0" prefWidth="24.0" stylesheets="@HeaderFont.css" text="px" textFill="#aacbc4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label fx:id="backBtn" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#menu" prefHeight="42.0" prefWidth="92.0" style="-fx-background-color: aacbc4;" styleClass="label" stylesheets="@HeaderFont.css" text="Go Back">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </Label>
+            <VBox prefHeight="200.0" prefWidth="100.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" hvalue="0.5" prefHeight="200.0" prefWidth="200.0" vbarPolicy="NEVER" vvalue="0.5" BorderPane.alignment="CENTER">
+         <content>
+            <Pane fx:id="contentPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100000.0" prefWidth="100000.0" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

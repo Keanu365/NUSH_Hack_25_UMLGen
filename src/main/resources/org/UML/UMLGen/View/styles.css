@@ -1,0 +1,96 @@
+.root {
+    primary: linear-gradient(to bottom right, #1e2a38, #2f3e51);
+    secondary:  linear-gradient(to bottom right, #3fffd9, #27e3c2);
+    secondary-hover: linear-gradient(to bottom right, #20e0ba, #08c4a3);
+    /*-fx-font-family: "Ink Free";*/
+}
+
+.bg{
+    -fx-background-color: primary;
+}
+
+.main_btn{
+    -fx-background-color: secondary;
+}
+
+#back_btn{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-font-size: 24px;
+    -fx-font-family: "Ink Free";
+}
+
+#app_name{
+    -fx-font-family: "Ink Free";
+    -fx-font-size: 24px;
+    -fx-alignment: center-right;
+}
+
+.ai_response{
+    -fx-background-color: #dddddd;
+    -fx-text-fill: black;
+    -fx-text-alignment: left;
+    -fx-content-display: left;
+    -fx-alignment: center-left;
+}
+
+.user_response{
+    -fx-background-color: primary;
+    -fx-text-fill: white;
+    -fx-text-alignment: right;
+    -fx-content-display: right;
+    -fx-alignment: center-right;
+}
+
+
+
+.response{
+    -fx-background-radius: 15px;
+    /*-fx-font-family: "Ink Free";*/
+    -fx-padding: 10px 10px 10px 10px;
+    -fx-pref-width: 525px;
+    -fx-max-width: 525px;
+    -fx-wrap-text: true;
+    -fx-font-size: 14px;
+}
+
+.label1{
+    -fx-text-fill: white;
+    -fx-font-family: "Ink Free";
+}
+
+.label2{
+    -fx-text-fill: secondary;
+    -fx-font-family: "Ink Free";
+}
+
+.uml_label{
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-padding: 5px 5px 5px 5px;
+    -fx-control-inner-background: transparent;
+    -fx-font-size: 12px;
+}
+
+.styled-text-area .text{
+    -fx-fill: black;
+}
+
+.toggle_button{
+    -fx-pref-width: 100px;
+    -fx-background-color: secondary;
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+    -fx-border-width: 0px;
+    -fx-background-radius: 10px;
+}
+.toggle_button:hover{
+    -fx-background-color: secondary-hover;
+}
+.toggle_button:selected{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+}
