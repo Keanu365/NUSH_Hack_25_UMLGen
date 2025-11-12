@@ -69,16 +69,6 @@ public class MainController extends Controller{
         st.play();
     }
 
-    @FXML
-    void showMMScene(MouseEvent ignore) {
-        showAlert(Alert.AlertType.INFORMATION, "ClassMate - Future Development", "Sorry, Work in Progress!", "Stay tuned for future updates!", false);
-    }
-
-    @FXML
-    void about() throws IOException{
-        showScene(new Stage(), "ClassMate - About Programmer", "View/about.fxml");
-    }
-
     @Override
     String generateAI(String prompt) {
         return "";

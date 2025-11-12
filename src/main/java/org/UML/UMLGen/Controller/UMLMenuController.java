@@ -87,15 +87,6 @@ public class UMLMenuController extends Controller{
         }
     }
 
-    @FXML
-    void instructions(MouseEvent event) {
-        try {
-            showScene(new Stage(), "ClassMate - UML Diagram Generator - What to upload?", "View/uml-tut-view.fxml");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
     @Override
     String generateAI(String prompt) {
         return "";
