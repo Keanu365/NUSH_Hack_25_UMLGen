@@ -79,7 +79,7 @@
                         <Image url="@logo.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="49.0" prefWidth="119.0" stylesheets="@HeaderFont.css" text="UML" textFill="#aacbc4">
+                  <Label prefHeight="49.0" prefWidth="119.0" stylesheets="@HeaderFont.css" text="ClassBuddy" textFill="#aacbc4">
                      <font>
                         <Font size="28.0" />
                      </font>
