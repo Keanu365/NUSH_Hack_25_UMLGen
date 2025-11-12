@@ -23,11 +23,10 @@ public class SplashScreenController {
     @FXML
     public void initialize() {
         Thread thread = new Thread(() -> {
-            FadeTransition ft = new FadeTransition(Duration.millis(1000), logo);
-            ft.setFromValue(0);
-            ft.setToValue(1);
+            RotateTransition ft = new RotateTransition(Duration.millis(1000), logo);
+            ft.setFromAngle(0);
+            ft.setToAngle(360);
             ft.setCycleCount(Timeline.INDEFINITE);
-            ft.setAutoReverse(true);
             ft.play();
             Timeline progressTimeline = new Timeline(
                     new KeyFrame(Duration.ZERO, new KeyValue(progressBar.progressProperty(), 0)),
@@ -36,7 +35,7 @@ public class SplashScreenController {
             progressTimeline.setCycleCount(1);
             progressTimeline.play();
             try {
-                Thread.sleep(8000);
+                Thread.sleep(5000);
                 if (!fxmlToShow.isEmpty()) {
                     FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxmlToShow));
                     Platform.runLater(() -> {
