@@ -35,11 +35,11 @@ public class UMLMenuController extends Controller{
     @FXML
     void generate(MouseEvent event) throws IOException {
         Stage stage = new Stage();
-        stage.setTitle("ClassMate - UML Diagram Editor");
+        stage.setTitle("UML Diagram Editor");
         stage.getIcons().add(new javafx.scene.image.Image("file:" + System.getProperty("user.dir") + "/src/main/resources/com/example/classmate/View/icon.png"));
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("View/splash-screen.fxml"));
         SplashScreenController.fxmlToShow = "View/uml-diagram.fxml";
-        SplashScreenController.title = "ClassMate - UML Diagram Editor";
+        SplashScreenController.title = "UML Diagram Editor";
         Parent root = loader.load();
         Scene scene = new Scene(root);
         stage.setScene(scene);

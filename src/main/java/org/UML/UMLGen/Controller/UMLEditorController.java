@@ -227,11 +227,11 @@ public class UMLEditorController extends Controller{
             }else if (outputFile.getName().toLowerCase().endsWith(".cmud")) {
                 SaveDiagram.saveAsCMUD(outputFile);
             }
-            showAlert(Alert.AlertType.INFORMATION, "Classmate - UML Diagram Saved", "UML Diagram Saved", "Your UML Diagram has been saved as " + outputFile.getName(), false);
+            showAlert(Alert.AlertType.INFORMATION, "UML Diagram Saved", "UML Diagram Saved", "Your UML Diagram has been saved as " + outputFile.getName(), false);
         }catch(IllegalArgumentException e){
-            showAlert(Alert.AlertType.ERROR, "ClassMate - Error", "No content to save", "There is no content to save. Please add content before saving.", false);
+            showAlert(Alert.AlertType.ERROR, "Error", "No content to save", "There is no content to save. Please add content before saving.", false);
         }catch(Exception e){
-            showAlert(Alert.AlertType.ERROR, "ClassMate - Save Error", "Error in saving file", e.getMessage(), false);
+            showAlert(Alert.AlertType.ERROR, "Save Error", "Error in saving file", e.getMessage(), false);
         }
     }
 
@@ -419,9 +419,9 @@ public class UMLEditorController extends Controller{
                     if (!borderWidthField.getText().matches(regex)) throw new IllegalArgumentException();
                     umlBox.setBorderWidth(Double.parseDouble(borderWidthField.getText()));
                 } catch (IllegalArgumentException e) {
-                    showAlert(Alert.AlertType.ERROR, "ClassMate - Input Error", "Error in input!", "Please only enter a number greater than 0!", false);
+                    showAlert(Alert.AlertType.ERROR, "Input Error", "Error in input!", "Please only enter a number greater than 0!", false);
                 } catch (Exception e) {
-                    showAlert(Alert.AlertType.ERROR, "ClassMate - Error", "Unexpected Error", "An unexpected error occurred. Please try again later.", false);
+                    showAlert(Alert.AlertType.ERROR, "Error", "Unexpected Error", "An unexpected error occurred. Please try again later.", false);
                 }
             });
             fontColorPicker.setOnAction(_ -> {
@@ -434,9 +434,9 @@ public class UMLEditorController extends Controller{
                     umlBox.setFontSize(Double.parseDouble(fontSizeField.getText()));
 
                 } catch (IllegalArgumentException e) {
-                    showAlert(Alert.AlertType.ERROR, "ClassMate - Input Error", "Error in input!", "Please only enter a number greater than 0!", false);
+                    showAlert(Alert.AlertType.ERROR, "Input Error", "Error in input!", "Please only enter a number greater than 0!", false);
                 } catch (Exception e) {
-                    showAlert(Alert.AlertType.ERROR, "ClassMate - Error", "Unexpected Error", "An unexpected error occurred. Please try again later.", false);
+                    showAlert(Alert.AlertType.ERROR, "Error", "Unexpected Error", "An unexpected error occurred. Please try again later.", false);
                 }
             });
         }else if (node instanceof PolyArrow arrow){
@@ -448,9 +448,9 @@ public class UMLEditorController extends Controller{
                     if (!borderWidthField.getText().matches(regex)) throw new IllegalArgumentException();
                     arrow.setStrokeWidth(Double.parseDouble(borderWidthField.getText()));
                 } catch (IllegalArgumentException e) {
-                    showAlert(Alert.AlertType.ERROR, "ClassMate - Input Error", "Error in input!", "Please only enter a number greater than 0!", false);
+                    showAlert(Alert.AlertType.ERROR, "Input Error", "Error in input!", "Please only enter a number greater than 0!", false);
                 } catch (Exception e) {
-                    showAlert(Alert.AlertType.ERROR, "ClassMate - Error", "Unexpected Error", "An unexpected error occurred. Please try again later.", false);
+                    showAlert(Alert.AlertType.ERROR, "Error", "Unexpected Error", "An unexpected error occurred. Please try again later.", false);
                 }
             });
         }
