@@ -1,5 +1,6 @@
 package org.UML.UMLGen.Model;
 
+import javafx.scene.control.IndexRange;
 import org.UML.UMLGen.Controller.UMLEditorController;
 import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
@@ -94,14 +95,15 @@ public class UMLBox extends VBox implements Selectable, Resizable, Formattable {
         this.setBorderWidth(this.borderWidth);
     }
 
-    public static void formatSelected(InlineCssTextArea textArea, String style){
+    public static void formatSelected(InlineCssTextArea area, String style) {
         Platform.runLater(() -> {
-            String matchStr = textArea.getSelectedText();
-            int start = textArea.getText().indexOf(matchStr);
-            int end = start + matchStr.length();
-            textArea.setStyle(start, end, style);
+            IndexRange sel = area.getSelection();
+            if (sel.getLength() == 0) return;
+            String old = area.getStyleOfChar(sel.getStart());
+            area.setStyle(sel.getStart(), sel.getEnd(), old + ";" + style);
         });
     }
+
 
 
     public static InlineCssTextArea[] getAllAreas() {
@@ -176,6 +178,7 @@ public class UMLBox extends VBox implements Selectable, Resizable, Formattable {
     private String textHelper(String string){
         return (string.length() <= 1 ? string : string.substring(0, string.length() - 1).replace("\n", "\\n"));
     }
+
     private String getStyleString(InlineCssTextArea textArea){
         StyleSpans<String> spans = textArea.getStyleSpans(0, textArea.getLength());
         StringBuilder builder = new StringBuilder();
@@ -279,17 +282,24 @@ public class UMLBox extends VBox implements Selectable, Resizable, Formattable {
     }
 
     public Color getFontColor(){return this.fontColor;}
-    public void setFontColor(Color newColor){
-        this.fontColor = newColor;
+
+    public void setFontColor(Color newColor) {
         String css = String.format("-fx-fill: rgb(%d,%d,%d);",
                 (int)(newColor.getRed() * 255),
                 (int)(newColor.getGreen() * 255),
                 (int)(newColor.getBlue() * 255));
-        for (Node node : this.getChildren()){
-            InlineCssTextArea textArea = (InlineCssTextArea) node;
-            textArea.setStyle(0, textArea.getText().length(), css);
+
+        for (Node node : this.getChildren()) {
+            InlineCssTextArea area = (InlineCssTextArea) node;
+            int len = area.getLength();
+            for (int i = 0; i < len; i++) {
+                String old = area.getStyleOfChar(i);
+                area.setStyle(i, i + 1, old + ";" + css);
+            }
         }
     }
+
+
 
     public double getFontSize(){return this.fontSize;}
     public void setFontSize(double fontSize){
