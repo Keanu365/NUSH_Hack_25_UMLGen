@@ -58,7 +58,7 @@
             <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
          </padding>
       </VBox>
-      <Label onMouseClicked="#about" styleClass="label2" text="About Programmer" GridPane.rowIndex="3">
+      <Label styleClass="label2" text="About Programmer" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets bottom="30.0" left="30.0" />
          </GridPane.margin>

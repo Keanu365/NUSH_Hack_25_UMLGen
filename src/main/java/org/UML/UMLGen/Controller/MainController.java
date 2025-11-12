@@ -28,7 +28,7 @@ public class MainController extends Controller{
 
     @FXML
     void loadUMLScene(MouseEvent ignore) throws IOException {
-        showScene(new Stage(), "ClassMate - UML Diagram Generator", "View/uml-view-new.fxml", false);
+        showScene(new Stage(), "UML Diagram Generator", "View/uml-view-new.fxml", false);
     }
 
     @FXML

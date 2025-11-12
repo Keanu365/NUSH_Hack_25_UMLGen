@@ -23,7 +23,7 @@
       <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" style="-fx-font-size: 48px;" styleClass="label2" text="Loading..." textAlignment="CENTER" />
       <ImageView fx:id="logo" fitHeight="200.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
          <image>
-            <Image url="@icon.png" />
+            <Image url="@logo.png" />
          </image>
       </ImageView>
       <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" progress="0.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
