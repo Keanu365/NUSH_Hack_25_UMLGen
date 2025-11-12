@@ -53,7 +53,7 @@ public class SplashScreenController {
                         } catch (Exception _){}
                         stage.setFullScreen(!fxmlToShow.equals("View/main-menu.fxml"));
                         stage.setFullScreenExitHint("");
-                        stage.setResizable(false);
+//                        stage.setResizable(false);
                         stage.getIcons().add(new javafx.scene.image.Image("file:" + System.getProperty("user.dir") + "/src/main/resources/com/example/classmate/View/icon.png"));
                         stage.show();
                     });

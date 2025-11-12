@@ -17,7 +17,6 @@ public abstract class Controller {
 
     @FXML
     void menu(MouseEvent event) {
-        //TODO: Cool animation
         Node source = (Node)event.getSource();
         Scene scene = source.getScene();
         Stage stage = (Stage)scene.getWindow();
